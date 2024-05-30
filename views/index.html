@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+ 
+<main>
+  <section class="overview">
+    <h2>Overview</h2>
+    <div class="overview-items">
+      <div class="item">
+        <h3>Screens</h3>
+        <p>Total Screens: 100</p>
+
+      </div>
+      <div class="item">
+        <h3>Screens</h3>
+        
+        <p>Offline Screens: 01</p>
+      </div>
+      <div class="item">
+        <h3>Screens</h3>
+        
+        <p>Online Screens: 99</p>
+      
+      </div>
+
+      <div class="item">
+        <h3>Screens</h3>
+        <p>Total Screens: 100</p>
+        <p>Online Screens: 99</p>
+        <p>Offline Screens: 01</p>
+      </div>
+      
+      <div class="item">
+        <h3>Total Media Files</h3>
+        <p>05</p>
+        <p>Storage Used: 33.50 mb</p>
+      </div>
+    </div>
+  </section>
+  <section class="screens box">
+    <h2>Screens/Players</h2>
+    <a href="#" class="view-more">View More</a>
+  </section>
+  <section class="screen-location box">
+    <h2>Screen Location</h2>
+    <p>Total Screens: 100 | Last 5 Screens</p>
+    <ul>
+      <li>
+        <p>Orbit Mall, Lift 1</p>
+        <p>Orientation: Portrait</p>
+        <p>Last Response: 2 minute ago</p>
+        <p>Details: 1</p>
+      </li>
+      <!-- More screen locations here -->
+    </ul>
+  </section>
+  
+  <section class="activity-log">
+    <h2>Activity Log</h2>
+    <a href="#" class="view-more">View More</a>
+  </section>
+</main>
+
+<style>
+  /* Main Styles */
+main {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Overview Section */
+.overview {
+  margin-bottom: 30px;
+}
+
+.overview-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Library Section */
+.library ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.library ul li {
+  margin-bottom: 10px;
+}
+
+/* Screens Section */
+.screens {
+  margin-bottom: 30px;
+}
+
+/* Screen Location Section */
+.screen-location ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.screen-location ul li {
+  margin-bottom: 20px;
+}
+
+/* Activity Log Section */
+.activity-log {
+  margin-bottom: 30px;
+}
+/* Box styles */
+.box {
+  border: 1px solid #ccc; /* Border color and thickness */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  margin-bottom: 20px; /* Spacing below the box */
+}
+
+/* Apply box styles to sections */
+.screens,
+.screen-location {
+  /* Set the background color of the box */
+  background-color: #f9f9f9;
+}
+
+/* Apply padding to the ul element inside the screen-location section */
+.screen-location ul {
+  padding-left: 20px;
+}
+
+
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<%- include('layout.ejs') %>
+
+
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/library.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="flex  justify-flex-start w-screen h-screen bg-blue-100">
+    <!-- Component Start -->
+
+    <div class="big">
+
+      <div class=" flex-row justify-between w-full px-3 mt-3 mb-8 ml-8">
+        <div class="h-12  ">
+          <header>
+            <nav>
+              <li class="list-none">
+                <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+            </nav>
+          </header>
+        </div>
+        <div class=" mb-8 ">
+          <div>
+            <button class="h-7 border border-gray-900 w-36 rounded-2xl bg-white">Home>
+              <b>library</b>
+            </button>
+          </div>
+
+
+        </div>
+        <div class="mb-8">
+          <button
+            class="h-11 w-28 border  border-blue-500 rounded-3xl font-normal text-blue-500 text-base">Widgets</button>
+        </div>
+        <div class="   border border-gray-900 flex flex-row justify-between items-center h-32 W-80 rounded-xl bg-white">
+
+          <div class="  pl-8">
+            <h6 class="font-bold">ALL MEDIA FILES</h6>
+            <p class="text-xs font-normal">TOTAL FILES - <%= files.length %>
+            </p>
+          </div>
+          <div class="flex  justify-center items-center  border-2 border-blue-500 rounded-3xl  ">
+            <button
+              class="  border-2 border-blue-500  bg-blue-500 text-white px-3 py-1  h-9 w-24 rounded-3xl">All</button>
+            <button class="text-blue   border-r-2 border-blue-500   px-3 py-1 h-9 w-24">Photos</button>
+            <button class=" 	text-blue  px-3 py-1 h-9 w-24">Videos</button>
+          </div>
+
+
+          <div class="">
+            <div>
+              <svg width="255" height="42" viewBox="0 0 255 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_4145_1407)">
+                  <rect x="2" y="2" width="251" height="38" rx="8" fill="white" />
+                  <rect x="2.25" y="2.25" width="250.5" height="37.5" rx="7.75" stroke="#1C1C1C" stroke-opacity="0.4"
+                    stroke-width="0.5" />
+                  <path
+                    d="M24.3516 27.3563C24.2582 27.4483 24.1326 27.4999 24.0016 27.5001C23.8688 27.4995 23.7413 27.4481 23.6453 27.3563L20.9453 24.6501C19.8082 25.6052 18.3462 26.0845 16.8643 25.9879C15.3824 25.8913 13.995 25.2264 12.9915 24.1317C11.9879 23.0371 11.4457 21.5973 11.4779 20.1126C11.5101 18.6279 12.1143 17.213 13.1644 16.1629C14.2144 15.1128 15.6294 14.5087 17.1141 14.4765C18.5988 14.4442 20.0386 14.9865 21.1332 15.99C22.2278 16.9936 22.8928 18.381 22.9894 19.8628C23.0859 21.3447 22.6067 22.8067 21.6516 23.9438L24.3516 26.6438C24.3988 26.6904 24.4363 26.7458 24.4619 26.807C24.4875 26.8681 24.5007 26.9338 24.5007 27.0001C24.5007 27.0664 24.4875 27.132 24.4619 27.1932C24.4363 27.2544 24.3988 27.3098 24.3516 27.3563ZM17.2516 25.0001C18.191 25.0001 19.1094 24.7215 19.8905 24.1996C20.6717 23.6776 21.2805 22.9358 21.64 22.0678C21.9995 21.1999 22.0936 20.2448 21.9103 19.3234C21.727 18.402 21.2746 17.5556 20.6103 16.8913C19.946 16.227 19.0996 15.7746 18.1782 15.5914C17.2568 15.4081 16.3018 15.5022 15.4338 15.8617C14.5659 16.2212 13.824 16.83 13.3021 17.6111C12.7801 18.3923 12.5016 19.3106 12.5016 20.2501C12.5032 21.5094 13.0042 22.7166 13.8946 23.607C14.7851 24.4975 15.9923 24.9984 17.2516 25.0001Z"
+                    fill="#1C1C1C" fill-opacity="0.2" />
+                  <path
+                    d="M40.8011 18.3636C40.7415 17.8598 40.4995 17.4688 40.0753 17.1903C39.651 16.9119 39.1307 16.7727 38.5142 16.7727C38.0634 16.7727 37.669 16.8456 37.331 16.9915C36.9962 17.1373 36.7344 17.3378 36.5455 17.593C36.3598 17.8482 36.267 18.1383 36.267 18.4631C36.267 18.7348 36.3317 18.9685 36.4609 19.1641C36.5935 19.3563 36.7625 19.517 36.968 19.6463C37.1735 19.7723 37.389 19.8767 37.6143 19.9595C37.8397 20.0391 38.0469 20.1037 38.2358 20.1534L39.2699 20.4318C39.535 20.5014 39.83 20.5975 40.1548 20.7202C40.483 20.8428 40.7962 21.0102 41.0945 21.2223C41.3961 21.4311 41.6446 21.6996 41.8402 22.0277C42.0357 22.3558 42.1335 22.7585 42.1335 23.2358C42.1335 23.786 41.9893 24.2831 41.701 24.7273C41.416 25.1714 40.9983 25.5244 40.4482 25.7862C39.9013 26.0481 39.2367 26.179 38.4545 26.179C37.7254 26.179 37.094 26.0613 36.5604 25.826C36.0301 25.5907 35.6125 25.2625 35.3075 24.8416C35.0059 24.4207 34.8352 23.9318 34.7955 23.375H36.0682C36.1013 23.7595 36.2306 24.0777 36.456 24.3295C36.6847 24.5781 36.973 24.7637 37.321 24.8864C37.6723 25.0057 38.0502 25.0653 38.4545 25.0653C38.9252 25.0653 39.3478 24.9891 39.7223 24.8366C40.0968 24.6809 40.3935 24.4654 40.6122 24.1903C40.831 23.9119 40.9403 23.5871 40.9403 23.2159C40.9403 22.8778 40.8459 22.6027 40.657 22.3906C40.468 22.1785 40.2195 22.0062 39.9112 21.8736C39.603 21.741 39.2699 21.625 38.9119 21.5256L37.6591 21.1676C36.8636 20.9389 36.2339 20.6125 35.7699 20.1882C35.3059 19.764 35.0739 19.2088 35.0739 18.5227C35.0739 17.9527 35.228 17.4555 35.5362 17.0312C35.8478 16.6037 36.2654 16.2723 36.7891 16.0369C37.3161 15.7983 37.9044 15.679 38.554 15.679C39.2102 15.679 39.7936 15.7966 40.304 16.032C40.8144 16.264 41.2188 16.5821 41.517 16.9865C41.8187 17.3909 41.9777 17.8499 41.9943 18.3636H40.8011ZM47.2033 26.1591C46.4675 26.1591 45.8328 25.9967 45.2992 25.6719C44.7689 25.3438 44.3596 24.8864 44.0712 24.2997C43.7862 23.7098 43.6436 23.0237 43.6436 22.2415C43.6436 21.4593 43.7862 20.7699 44.0712 20.1733C44.3596 19.5734 44.7606 19.1061 45.2743 18.7713C45.7914 18.4332 46.3946 18.2642 47.084 18.2642C47.4817 18.2642 47.8745 18.3305 48.2623 18.4631C48.65 18.5956 49.003 18.8111 49.3212 19.1094C49.6394 19.4044 49.8929 19.7955 50.0819 20.2827C50.2708 20.7699 50.3652 21.3698 50.3652 22.0824V22.5795H44.4789V21.5653H49.1721C49.1721 21.1345 49.0859 20.75 48.9135 20.4119C48.7445 20.0739 48.5025 19.8071 48.1877 19.6115C47.8761 19.416 47.5082 19.3182 47.084 19.3182C46.6167 19.3182 46.2123 19.4342 45.8709 19.6662C45.5328 19.8949 45.2727 20.1932 45.0904 20.5611C44.9081 20.929 44.8169 21.3234 44.8169 21.7443V22.4205C44.8169 22.9972 44.9164 23.486 45.1152 23.8871C45.3174 24.2848 45.5975 24.5881 45.9554 24.7969C46.3134 25.0024 46.7293 25.1051 47.2033 25.1051C47.5115 25.1051 47.79 25.062 48.0385 24.9759C48.2904 24.8864 48.5075 24.7538 48.6898 24.5781C48.8721 24.3991 49.013 24.1771 49.1124 23.9119L50.2459 24.2301C50.1266 24.6146 49.9261 24.9527 49.6444 25.2443C49.3626 25.5327 49.0146 25.758 48.6003 25.9205C48.186 26.0795 47.7203 26.1591 47.2033 26.1591ZM55.0336 26.1591C54.3972 26.1591 53.8354 25.9983 53.3482 25.6768C52.861 25.352 52.4798 24.8946 52.2047 24.3047C51.9296 23.7114 51.7921 23.0104 51.7921 22.2017C51.7921 21.3996 51.9296 20.7036 52.2047 20.1136C52.4798 19.5237 52.8626 19.0679 53.3532 18.7464C53.8437 18.425 54.4105 18.2642 55.0534 18.2642C55.5506 18.2642 55.9434 18.3471 56.2317 18.5128C56.5234 18.6752 56.7454 18.8608 56.8979 19.0696C57.0537 19.2751 57.1747 19.4441 57.2608 19.5767H57.3603V18.3636H58.5336V26H57.4V24.8267H57.2608C57.1747 24.9659 57.052 25.1416 56.8929 25.3537C56.7338 25.5625 56.5068 25.7498 56.2118 25.9155C55.9168 26.0779 55.5241 26.1591 55.0336 26.1591ZM55.1926 25.1051C55.6633 25.1051 56.061 24.9825 56.3858 24.7372C56.7106 24.4886 56.9576 24.1456 57.1266 23.7081C57.2956 23.2673 57.3801 22.7585 57.3801 22.1818C57.3801 21.6117 57.2973 21.1129 57.1316 20.6854C56.9659 20.2545 56.7206 19.9197 56.3958 19.6811C56.071 19.4392 55.6699 19.3182 55.1926 19.3182C54.6955 19.3182 54.2812 19.4458 53.9498 19.701C53.6216 19.9529 53.3747 20.2959 53.209 20.7301C53.0466 21.161 52.9654 21.6449 52.9654 22.1818C52.9654 22.7254 53.0482 23.2192 53.214 23.6634C53.383 24.1042 53.6316 24.4555 53.9597 24.7173C54.2911 24.9759 54.7021 25.1051 55.1926 25.1051ZM60.8453 26V18.3636H61.9789V19.517H62.0584C62.1976 19.1392 62.4495 18.8326 62.8141 18.5973C63.1787 18.362 63.5897 18.2443 64.0471 18.2443C64.1332 18.2443 64.2409 18.246 64.3702 18.2493C64.4995 18.2526 64.5972 18.2576 64.6635 18.2642V19.4574C64.6238 19.4474 64.5326 19.4325 64.3901 19.4126C64.2509 19.3894 64.1034 19.3778 63.9476 19.3778C63.5764 19.3778 63.245 19.4557 62.9533 19.6115C62.665 19.764 62.4363 19.9761 62.2672 20.2479C62.1015 20.5163 62.0186 20.8229 62.0186 21.1676V26H60.8453ZM68.9242 26.1591C68.2083 26.1591 67.5918 25.9901 67.0748 25.652C66.5577 25.3139 66.16 24.8482 65.8816 24.255C65.6032 23.6617 65.464 22.9839 65.464 22.2216C65.464 21.446 65.6065 20.7616 65.8915 20.1683C66.1799 19.5717 66.5809 19.1061 67.0946 18.7713C67.6117 18.4332 68.2149 18.2642 68.9043 18.2642C69.4412 18.2642 69.9251 18.3636 70.356 18.5625C70.7869 18.7614 71.1399 19.0398 71.415 19.3977C71.69 19.7557 71.8607 20.1733 71.927 20.6506H70.7537C70.6642 20.3026 70.4654 19.9943 70.1571 19.7259C69.8522 19.4541 69.4412 19.3182 68.9242 19.3182C68.4668 19.3182 68.0658 19.4375 67.7211 19.6761C67.3797 19.9115 67.1129 20.2446 66.9206 20.6754C66.7317 21.103 66.6373 21.6051 66.6373 22.1818C66.6373 22.7718 66.7301 23.2855 66.9157 23.723C67.1046 24.1605 67.3697 24.5002 67.7111 24.7422C68.0558 24.9841 68.4602 25.1051 68.9242 25.1051C69.2291 25.1051 69.5059 25.0521 69.7544 24.946C70.003 24.84 70.2135 24.6875 70.3858 24.4886C70.5582 24.2898 70.6808 24.0511 70.7537 23.7727H71.927C71.8607 24.2235 71.6967 24.6295 71.4348 24.9908C71.1763 25.3487 70.8333 25.6338 70.4057 25.8459C69.9815 26.0547 69.4876 26.1591 68.9242 26.1591ZM74.8155 21.4062V26H73.6422V15.8182H74.8155V19.5568H74.915C75.0939 19.1624 75.3624 18.8492 75.7203 18.6172C76.0816 18.3819 76.5622 18.2642 77.1621 18.2642C77.6825 18.2642 78.1382 18.3686 78.5293 18.5774C78.9204 18.7829 79.2237 19.0994 79.4391 19.527C79.6578 19.9512 79.7672 20.4915 79.7672 21.1477V26H78.5939V21.2273C78.5939 20.6207 78.4365 20.1518 78.1216 19.8203C77.8101 19.4856 77.3775 19.3182 76.824 19.3182C76.4396 19.3182 76.0949 19.3994 75.79 19.5618C75.4883 19.7242 75.2497 19.9612 75.074 20.2727C74.9017 20.5843 74.8155 20.9621 74.8155 21.4062Z"
+                    fill="#1C1C1C" fill-opacity="0.2" />
+                </g>
+                <defs>
+                  <filter id="filter0_d_4145_1407" x="0" y="0" width="255" height="42" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha" />
+                    <feOffset />
+                    <feGaussianBlur stdDeviation="1" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4145_1407" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4145_1407" result="shape" />
+                  </filter>
+                </defs>
+              </svg>
+
+
+            </div>
+
+          </div>
+
+          <div class="">
+           
+
+            <form action="/upload" method="POST" enctype="multipart/form-data" style="margin: -22px 20px;">
+              <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input chose" id="customFile" name="myImages" multiple>
+                <label class="custom-file-label" for="customFile">Choose files</label>
+              </div>
+              <div class="uploads" id="uploads"></div>
+              <input type="submit" class="btn btn-primary btn-block" value="Uploads">
+            </form>
+
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="  h-64 w-full p-8  flex flex-col items-center justify-center ">
+        <div
+          class=" w-2/3 h-full   border  border-dotted	rounded-3xl border-4 border-black flex flex-col items-center justify-center  ">
+          <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+            <g clip-path="url(#clip0_4150_1606)">
+              <path d="M36 36L27 27L18 36" stroke="#464849" stroke-width="4.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M27 27V47.25" stroke="#464849" stroke-width="4.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M45.8817 41.3773C48.0762 40.181 49.8098 38.2878 50.8089 35.9967C51.808 33.7057 52.0157 31.1471 51.3991 28.7249C50.7826 26.3027 49.377 24.1547 47.4042 22.6201C45.4314 21.0855 43.0036 20.2515 40.5042 20.2498H37.6692C36.9881 17.6156 35.7188 15.1701 33.9566 13.0971C32.1943 11.0241 29.9851 9.3775 27.4949 8.28121C25.0047 7.18491 22.2984 6.6674 19.5794 6.76758C16.8605 6.86776 14.1996 7.58302 11.7968 8.85959C9.39408 10.1362 7.31198 11.9408 5.70708 14.1379C4.10218 16.335 3.01624 18.8673 2.53089 21.5445C2.04554 24.2217 2.17342 26.974 2.90491 29.5947C3.63641 32.2153 4.95248 34.636 6.75418 36.6748"
+                stroke="#464849" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M36 36L27 27L18 36" stroke="#464849" stroke-width="4.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_4150_1606">
+                <rect width="54" height="54" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          
+          <% if (files && files.length> 0) { %>
+            <h3 class="mt-4">Uploaded Files</h3>
+            <div class="row file-row">
+              <% let imageCount=0; %>
+                <% files.forEach(function(file) { %>
+                  <div class="col-md-4 file-col">
+                    <% if (file.format==='mp4' ) { %>
+                      <video width="100%" controls>
+                        <source src="<%= file.secure_url %>" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <% } else { %>
+                        <% imageCount++; %>
+                          <img src="<%= file.secure_url %>" alt="Uploaded image" class="img-thumbnail file-img">
+                          <% } %>
+                            <form id="delete-form-<%= file.public_id %>" action="/delete" method="POST"
+                              class="delete-form">
+                              <input type="hidden" name="public_id" value="<%= file.public_id %>">
+                              <button type="submit" class="btn btn-link" style="color: red;"
+                                onclick="return confirmDelete('<%= file.public_id %>');">
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </form>
+                  </div>
+                  <% }); %>
+            </div>
+        </div>
+        <% } else { %>
+          <p>No files uploaded yet.</p>
+          <% } %>
+
+
+      </div>
+
+
+
+
+
+
+      <style>
+
+
+
+
+
+      </style>
+
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+      <script>
+        $('.custom-file-input').on('change', function (event) {
+          var inputFile = event.currentTarget;
+          $(inputFile).parent().find('.custom-file-label').html(inputFile.files.length + ' files selected');
+        });
+
+
+        function confirmDelete(publicId) {
+          return confirm('Are you sure you want to delete this image?');
+        }
+      </script>
+
+  </body>
+
+  </html>

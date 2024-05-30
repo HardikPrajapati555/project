@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposals Page</title>
+    <link rel="stylesheet" href="/css/proposals.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <%- include('layout.ejs') %>
+
+    
+        <main>
+            <header>
+                <h1 id="openFormBtn">Proposals</h1>
+            </header>
+
+            <section class="proposals-list">
+                <h2>Submitted Proposals</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PROPOSAL NAME</th>
+                            <th>SUMMARY</th>
+                            <th>INVENTORY STATUS</th>
+                            <th>REACH</th>
+                            <th>ACTION</th>
+
+                        </tr>
+                    </thead>
+
+                    <!-- Proposals will be displayed here -->
+                    <tbody id="proposals">
+                        <% proposals.forEach(proposal=> { %>
+                            <tr>
+                                <td>
+                                    <%= proposal.name %>
+                                </td>
+                                <td>
+                                    <%= proposal.summary %>
+                                </td>
+                                <td>
+                                    <%= proposal.inventory_status %>
+                                </td>
+                                <td>
+                                    <%= proposal.reach %>
+                                </td>
+                                <td class="actions">
+                                    <button onclick="discardProposal(this)">Discard</button>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+
+                </table>
+            </section>
+
+            <div id="proposalModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="formStep1">
+                        <h2>Submit Your Proposal - Step 1</h2>
+                        <form id="proposalFormStep1">
+                            <label for="name">Client Name:</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <div class="form-row">
+                                <label for="startOn">Duration: Start On (DD/MM/YYYY):</label>
+                                <br>
+                                <input type="date" id="startOn" name="startOn" required>
+
+                                <label for="runsFor">Runs For (Days):</label>
+                                <input type="number" id="runsFor" name="runsFor" required>
+
+                                <label for="slotDuration">Slot Duration (Seconds):</label>
+                                <input type="number" id="slotDuration" name="slotDuration" required>
+                            </div>
+
+                            <label for="cities">Cities:</label>
+                            <div id="citiesContainer">
+                                <input type="text" id="city" name="city"
+                                    placeholder="Enter city names separated by commas">
+                            </div>
+                            <ul id="citiesList"></ul>
+
+
+
+
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Client Type</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <br>
+                            <br>
+
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>propertyType</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Plan:</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label for="advertisementTag">Advertisement Tag:</label>
+                            <input type="text" id="advertisementTag" name="advertisementTag" required>
+
+
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">POP required?</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Gio Tagging
+                                    required?</label>
+                            </div>
+                            <button type="button" id="nextStepBtn">Next</button>
+                        </form>
+                    </div>
+                    <div id="formStep2" style="display: none;">
+                        <form id="proposalFormStep3">
+                            <div class="col-auto">
+                                <label for="fileName">Type:</label>
+                                <button type="submit" class="btn btn-primary mb-3">Image/Gift</button>
+                                <button type="submit" class="btn btn-primary mb-3">Video</button>
+                                <button type="submit" class="btn btn-primary mb-3">web</button>
+                            </div>
+
+                            <label for="fileName">File Name:</label>
+                            <input type="text" id="fileName" name="fileName" required>
+
+                            <label for="media">Media:</label>
+                            <label class="btn btn-default btn-sm center-block btn-file">
+                                <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+                                <input type="file" style="display: none;">
+                            </label>
+
+                            <label for="creativeInstructions">Creative Instructions:</label>
+                            <textarea id="creativeInstructions" name="creativeInstructions" rows="4"
+                                required></textarea>
+                            <button type="button" id="nextStepBtn2">Next</button>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+        <script src="/js/proposals.js"></script>
+
+</body>
+
+</html>

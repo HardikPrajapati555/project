@@ -1,0 +1,187 @@
+<%- include('layout.ejs') %>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="main">
+                <!-- <button class="btn1"></button> -->
+                <div class="btns">
+                    <button class="btn4">
+                        <a class="navbar-brand" href="#">
+                            <h3>SCREEN/PLAYERS
+                                <h2>
+                                    <%= totalScreens %>
+                                </h2>
+                            </h3>
+                        </a>
+                    </button>
+                    <button class="btn2">
+                        <h3>Online Screen</h3>
+                        <h2>3</h2>
+                    </button>
+                    <button class="btn3">
+                        <h3>Offline Screen</h3>
+                        <h2>01</h2>
+                    </button>
+                    <br>
+                    <hr>
+                    <br><br><br>
+                    <div class="three">
+                        <button class="all">All Screen</button>
+                        <button class="photo">Screen Group</button>
+
+                        <button class="video" onclick="toggleDeletedData()">Deleted Screens</button>
+
+                        <script>
+                            function toggleDeletedData() {
+                                window.location.href = "/users/deleted";
+                            }</script>
+
+                    </div>
+                    <div>
+                        <!-- <button class="new-folder-jtn">
+                    <span class="icon">+</span>
+                    New Screen
+                </button> -->
+                        <button class="new-folder-jtn"><a href="/users/add" style="text-decoration: none;">New
+                                Screen</a></button>
+
+                        <button class="new-folder-btn">
+                            <span class="icon">+</span><a href="/users/groups/new">
+                            New Group</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="boxx">
+                    <nav class="navbar navbar-expand-lg bg-white text-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                                <h6>SCREEN/PLAYERS
+                                    <P>Total Screen 100</P>
+                                </h6>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class=""></span>
+                            </button>
+
+                            <form class="d-flex" role="search">
+                                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                            </form>
+                        </div>
+                    </nav>
+
+
+
+                    <div class="container">
+                        <div class="table-responsive">
+                            <table id="myTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Pairing Code</th>
+                                        <th>Screen Name</th>
+                                        <th>Tag</th>
+
+                                        <th>City</th>
+
+                                        <th>Area</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% locations.forEach(location=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= location.pairing_code %>
+                                            </td>
+                                            <td>
+                                                <%= location.screenname %>
+                                            </td>
+                                            <td>
+                                                <%= location.tag %>
+                                            </td>
+
+                                            <td>
+                                                <%= location.city %>
+                                            </td>
+
+                                            <td>
+                                                <%= location.area %>
+                                            </td>
+                                            <td>
+
+
+                                                <div>
+                                                    <a href="/users/edit/<%= location.id %>" class="btn btn-link">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+
+                                                    <form action="/users/delete/<%= location.id %>?_method=DELETE"
+                                                        method="POST" style="display: inline;">
+                                                        <button type="submit" class="btn btn-link">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                        </div>
+                    </div>
+
+
+
+                    <script src="/js/dashboard.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                        crossorigin="anonymous"></script>
+
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const tableRows = document.querySelectorAll('#myTable tbody tr');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const pairingCode = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                const screenName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const tag = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                const city = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+                const area = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+
+                if (pairingCode.includes(searchTerm) || screenName.includes(searchTerm) || tag.includes(searchTerm) || city.includes(searchTerm) || area.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+
+    </body>
+
+    </html>

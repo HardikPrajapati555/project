@@ -1,0 +1,77 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.btn1 {
+    font-family: sans-serif;
+    height: 330px;
+    width: 150px;
+    margin-left: -8px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ 
+
+.navbar{
+    font-family: sans-serif;
+    height: 581px;
+    width: 222px;
+    margin-top: -740px;
+    margin-right: -210px;
+    margin-left: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.admin{
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+
+.playlists:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+
+}
+.libary:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+}
+
+.proposal:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+
+}
+
+.team:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+}
+
+.log:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+}
+.tickets:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+}
+.screens:hover{
+    color: #7D89FF;
+    background-color: #EEF3FF;
+    border-radius: 20px;
+}

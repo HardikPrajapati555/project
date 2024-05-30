@@ -1,0 +1,89 @@
+<%- include('layout.ejs') %>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Logs</title>
+    <link rel="stylesheet" href="/css/logs.css">
+  </head>
+
+  <body>
+
+    <div class="activity-log">
+      <h2>Activity Logs</h2>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search...">
+        <button id="search-button">Search</button>
+      </div>
+      <button class="export-logs" id="export-logs-button">Export Logs</button>
+      <div class="log-container">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Action</th>
+              <th>Message</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% logs.forEach(log=> { %>
+              <tr>
+                <td>
+                  <%= log.date %>
+                </td>
+
+                <td>
+                  <%= log.date %>
+                </td>
+                <td>
+                  <%= log.date %>
+                </td>
+                <td><button class="delete-button" data-id="<%= log.id %>">Delete</button></td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+
+        <!-- Add more log items as needed -->
+      </div>
+    </div>
+
+
+    <script>
+      document.getElementById('export-logs-button').addEventListener('click', () => {
+        window.location.href = '/export-logs';
+      });
+      document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const logId = button.getAttribute('data-id');
+          fetch(`/delete-log/${logId}`, {
+            method: 'DELETE'
+          }).then(response => {
+            if (response.ok) {
+              button.closest('tr').remove();
+            } else {
+              alert('Failed to delete log');
+            }
+          });
+        });
+      });
+    </script>
+
+
+
+    <a href="/users/dashboard">Back to Dashboard</a>
+
+    <style>
+
+
+    </style>
+
+  </body>
+
+  </html>

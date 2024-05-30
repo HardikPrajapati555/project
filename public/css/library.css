@@ -1,0 +1,55 @@
+.store{
+    margin-top: 1500px;
+   }
+  
+   .file-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 501px;
+
+  }
+  
+  .file-col {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .file-img, video {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .delete-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .delete-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-form button i {
+    font-size: 18px;
+    color: red;
+  }
+  
+  .delete-form button:hover i {
+    color: darkred;
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .no-files {
+    font-size: 18px;
+    color: #999;
+  }

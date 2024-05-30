@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="sidbar.css">
+    <style>
+      .panel{
+    width: 269px;
+}
+
+    </style>
+  </head>
+  <body
+    class="flex items-center justify-flex-start w-screen h-screen space-x-6 bg-blue-100"
+  >
+    <!-- Component Start -->
+    <div
+      class="flex flex-col items-center h-full overflow-hidden text-black-400 rounded bg-white divide-x-2 panel  border-r border-gray-400 uline"
+    >
+      <a
+        class="flex items-center w-full px-3 mt-3"
+        href="https://www.google.com/search?q=aekads&oq=aekads&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTISCAEQABgKGIMBGLEDGIAEGIoFMgwIAhAAGAoYsQMYgAQyDAgDEAAYChixAxiABDIJCAQQABgKGIAEMhIIBRAAGAoYgwEYsQMYgAQYigUyBggGEEUYPDIGCAcQRRg80gEIMzQ5M2owajSoAgCwAgE&sourceid=chrome&ie=UTF-8"
+      >
+        <img
+          src="/svgs/Aek Ads Logo (3).svg"
+          alt="image loading"
+          class="logo"
+          height="48px"
+          width="180px"
+        />
+      </a>
+      <div class="w-full px-2">
+        <div class="flex flex-col items-center w-full mt-3">
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/dashboard"
+          >
+            <svg
+              class="w-6 h-6 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              /> -->
+              <path
+                d="M15.8333 2.5H4.16667C3.24619 2.5 2.5 3.24619 2.5 4.16667V15.8333C2.5 16.7538 3.24619 17.5 4.16667 17.5H15.8333C16.7538 17.5 17.5 16.7538 17.5 15.8333V4.16667C17.5 3.24619 16.7538 2.5 15.8333 2.5Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.5 7.5H17.5"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.5 17.5V7.5"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="ml-2 text-lg">Dashboard </span>
+          </a>
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/users/dashboard"
+          >
+            <svg
+              class="w-6 h-6 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              /> -->
+              <path
+                d="M2 14.075C2.72067 14.222 3.38221 14.5776 3.90229 15.0977C4.42237 15.6178 4.77802 16.2793 4.925 17M2 11.0375C3.52309 11.2069 4.94321 11.8895 6.02684 12.9732C7.11047 14.0568 7.7931 15.4769 7.9625 17M2 8V6.5C2 6.10218 2.15804 5.72064 2.43934 5.43934C2.72064 5.15804 3.10218 5 3.5 5H15.5C15.8978 5 16.2794 5.15804 16.5607 5.43934C16.842 5.72064 17 6.10218 17 6.5V15.5C17 15.8978 16.842 16.2794 16.5607 16.5607C16.2794 16.842 15.8978 17 15.5 17H11"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="ml-2 text-lg">Screens</span>
+          </a>
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 hover:bg-blue-100 hover:text-blue-900 rounded no-underline"
+            href="/play "
+          >
+            <svg
+              class="w-6 h-6 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              /> -->
+              <path
+                d="M6 4.5H15.75"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6 9H15.75"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6 13.5H15.75"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.25 4.5H2.2575"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.25 9H2.2575"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.25 13.5H2.2575"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="ml-2 text-lg">Playlists</span>
+          </a>
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/upload"
+          >
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"
+              /> -->
+              <path
+                 d="M10 6.25L7.66641 8C7.55822 8.08114 7.42664 8.125 7.29141 8.125H2.5V5C2.5 4.83424 2.56585 4.67527 2.68306 4.55806C2.80027 4.44085 2.95924 4.375 3.125 4.375H7.29141C7.42664 4.375 7.55822 4.41886 7.66641 4.5L10 6.25Z"
+                 fill="#1C1C1C"
+                 fill-opacity="0.1"
+                 />
+              <path
+                d="M16.875 5.625H10.2086L8.04141 4C7.82472 3.83832 7.56176 3.75067 7.29141 3.75H3.125C2.79348 3.75 2.47554 3.8817 2.24112 4.11612C2.0067 4.35054 1.875 4.66848 1.875 5V15.625C1.875 15.9565 2.0067 16.2745 2.24112 16.5089C2.47554 16.7433 2.79348 16.875 3.125 16.875H16.875C17.2065 16.875 17.5245 16.7433 17.7589 16.5089C17.9933 16.2745 18.125 15.9565 18.125 15.625V6.875C18.125 6.54348 17.9933 6.22554 17.7589 5.99112C17.5245 5.7567 17.2065 5.625 16.875 5.625ZM3.125 5H7.29141L8.95859 6.25L7.29141 7.5H3.125V5ZM16.875 15.625H3.125V8.75H7.29141C7.56176 8.74933 7.82472 8.66168 8.04141 8.5L10.2086 6.875H16.875V15.625Z"
+                fill="#1C1C1C"
+               
+                />
+            </svg>
+            <span class="ml-2 text-lg">Library</span>
+          </a>
+
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/proposals"
+          >
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              /> -->
+
+              <path
+                d="M10 6.25L7.66641 8C7.55822 8.08114 7.42664 8.125 7.29141 8.125H2.5V5C2.5 4.83424 2.56585 4.67527 2.68306 4.55806C2.80027 4.44085 2.95924 4.375 3.125 4.375H7.29141C7.42664 4.375 7.55822 4.41886 7.66641 4.5L10 6.25Z"
+                fill="#1C1C1C"
+                fill-opacity="0.1"
+              />
+              <path
+                d="M16.875 5.625H10.2086L8.04141 4C7.82472 3.83832 7.56176 3.75067 7.29141 3.75H3.125C2.79348 3.75 2.47554 3.8817 2.24112 4.11612C2.0067 4.35054 1.875 4.66848 1.875 5V15.625C1.875 15.9565 2.0067 16.2745 2.24112 16.5089C2.47554 16.7433 2.79348 16.875 3.125 16.875H16.875C17.2065 16.875 17.5245 16.7433 17.7589 16.5089C17.9933 16.2745 18.125 15.9565 18.125 15.625V6.875C18.125 6.54348 17.9933 6.22554 17.7589 5.99112C17.5245 5.7567 17.2065 5.625 16.875 5.625ZM3.125 5H7.29141L8.95859 6.25L7.29141 7.5H3.125V5ZM16.875 15.625H3.125V8.75H7.29141C7.56176 8.74933 7.82472 8.66168 8.04141 8.5L10.2086 6.875H16.875V15.625Z"
+                fill="#1C1C1C"
+              />
+            </svg>
+            <span class="ml-2 text-lg">Proposal</span>
+          </a>
+          <a
+            class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/users/register"
+          >
+            <svg
+              class="w-6 h-6 "
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              /> -->
+              <path
+                d="M19.1252 8.75C19.0596 8.79924 18.9849 8.83507 18.9053 8.85544C18.8258 8.87581 18.7431 8.88032 18.6618 8.86872C18.5806 8.85711 18.5024 8.82961 18.4318 8.78779C18.3612 8.74598 18.2995 8.69066 18.2502 8.625C17.8735 8.11864 17.3832 7.7078 16.8187 7.42556C16.2542 7.14331 15.6313 6.99755 15.0002 7C14.8345 7 14.6755 6.93415 14.5583 6.81694C14.4411 6.69973 14.3752 6.54076 14.3752 6.375C14.3752 6.20924 14.4411 6.05027 14.5583 5.93306C14.6755 5.81585 14.8345 5.75 15.0002 5.75C15.3509 5.74997 15.6946 5.65159 15.9921 5.46605C16.2897 5.2805 16.5293 5.01522 16.6836 4.70034C16.838 4.38546 16.901 4.0336 16.8654 3.68473C16.8298 3.33586 16.6971 3.00396 16.4823 2.72673C16.2676 2.44951 15.9794 2.23806 15.6505 2.11642C15.3216 1.99477 14.9651 1.96781 14.6217 2.03858C14.2782 2.10935 13.9615 2.27503 13.7074 2.51679C13.4534 2.75855 13.2723 3.0667 13.1846 3.40625C13.1641 3.48576 13.1281 3.56045 13.0787 3.62606C13.0293 3.69166 12.9675 3.7469 12.8968 3.78861C12.8261 3.83033 12.7478 3.8577 12.6665 3.86917C12.5852 3.88064 12.5024 3.87598 12.4229 3.85547C12.3434 3.83495 12.2687 3.79897 12.2031 3.74958C12.1375 3.7002 12.0822 3.63837 12.0405 3.56764C11.9988 3.49691 11.9714 3.41865 11.96 3.33734C11.9485 3.25603 11.9532 3.17326 11.9737 3.09375C12.0954 2.6229 12.3253 2.18695 12.6451 1.82058C12.9649 1.45422 13.3658 1.16755 13.8159 0.983396C14.266 0.799238 14.7529 0.72267 15.2378 0.759786C15.7227 0.796903 16.1922 0.946677 16.609 1.19719C17.0259 1.44771 17.3785 1.79205 17.6388 2.20282C17.8991 2.61359 18.06 3.07946 18.1086 3.56334C18.1572 4.04722 18.0922 4.53577 17.9188 4.99011C17.7454 5.44446 17.4683 5.85205 17.1096 6.18047C17.9595 6.54843 18.6982 7.13235 19.2526 7.87422C19.3018 7.94004 19.3376 8.01494 19.3578 8.09461C19.3781 8.17429 19.3824 8.25717 19.3706 8.33853C19.3588 8.41988 19.331 8.4981 19.2889 8.56871C19.2468 8.63931 19.1912 8.70092 19.1252 8.75ZM14.9159 13.5625C14.9595 13.6336 14.9884 13.7128 15.001 13.7953C15.0135 13.8778 15.0094 13.962 14.9889 14.0429C14.9684 14.1238 14.9319 14.1998 14.8815 14.2664C14.8311 14.3329 14.768 14.3887 14.6957 14.4305C14.6234 14.4722 14.5435 14.499 14.4607 14.5094C14.3779 14.5198 14.2938 14.5134 14.2135 14.4908C14.1332 14.4682 14.0582 14.4297 13.993 14.3776C13.9278 14.3255 13.8737 14.2608 13.8338 14.1875C13.4401 13.521 12.8794 12.9687 12.207 12.585C11.5347 12.2013 10.774 11.9995 9.99985 11.9995C9.22573 11.9995 8.46499 12.2013 7.79266 12.585C7.12033 12.9687 6.55962 13.521 6.16586 14.1875C6.12679 14.2622 6.07301 14.3282 6.00777 14.3816C5.94252 14.4349 5.86715 14.4746 5.7862 14.498C5.70524 14.5215 5.62037 14.5284 5.53669 14.5182C5.45302 14.5081 5.37226 14.4811 5.29928 14.4389C5.2263 14.3967 5.16261 14.3402 5.11204 14.2728C5.06147 14.2053 5.02506 14.1284 5.005 14.0465C4.98495 13.9646 4.98166 13.8795 4.99535 13.7964C5.00903 13.7132 5.03939 13.6336 5.08461 13.5625C5.69055 12.5214 6.61445 11.7021 7.72055 11.225C7.09815 10.7485 6.64073 10.0889 6.41258 9.33893C6.18443 8.58898 6.19703 7.7864 6.44861 7.04399C6.70018 6.30157 7.17808 5.65666 7.81513 5.1999C8.45219 4.74314 9.21636 4.49749 10.0002 4.49749C10.7841 4.49749 11.5483 4.74314 12.1853 5.1999C12.8224 5.65666 13.3003 6.30157 13.5519 7.04399C13.8034 7.7864 13.816 8.58898 13.5879 9.33893C13.3597 10.0889 12.9023 10.7485 12.2799 11.225C13.386 11.7021 14.3099 12.5214 14.9159 13.5625ZM10.0002 10.75C10.4947 10.75 10.978 10.6034 11.3892 10.3287C11.8003 10.054 12.1207 9.66352 12.3099 9.20671C12.4992 8.74989 12.5487 8.24722 12.4522 7.76227C12.3557 7.27732 12.1176 6.83186 11.768 6.48223C11.4184 6.1326 10.9729 5.8945 10.488 5.79803C10.003 5.70157 9.50034 5.75108 9.04353 5.9403C8.58671 6.12952 8.19627 6.44995 7.92156 6.86107C7.64686 7.27219 7.50024 7.75554 7.50024 8.25C7.50024 8.91304 7.76363 9.54892 8.23247 10.0178C8.70131 10.4866 9.3372 10.75 10.0002 10.75ZM5.62524 6.375C5.62524 6.20924 5.55939 6.05027 5.44218 5.93306C5.32497 5.81585 5.166 5.75 5.00024 5.75C4.64956 5.74997 4.30591 5.65159 4.00834 5.46605C3.71076 5.2805 3.47119 5.01522 3.31682 4.70034C3.16246 4.38546 3.09949 4.0336 3.13508 3.68473C3.17066 3.33586 3.30337 3.00396 3.51813 2.72673C3.73289 2.44951 4.02109 2.23806 4.35 2.11642C4.67891 1.99477 5.03534 1.96781 5.3788 2.03858C5.72227 2.10935 6.039 2.27503 6.29303 2.51679C6.54706 2.75855 6.72819 3.0667 6.81586 3.40625C6.8573 3.56683 6.96083 3.70437 7.10368 3.78861C7.24653 3.87286 7.417 3.89691 7.57758 3.85547C7.73816 3.81403 7.8757 3.71049 7.95995 3.56764C8.04419 3.42479 8.06824 3.25433 8.0268 3.09375C7.90511 2.6229 7.67522 2.18695 7.3554 1.82058C7.03558 1.45422 6.63468 1.16755 6.18458 0.983396C5.73447 0.799238 5.2476 0.72267 4.7627 0.759786C4.2778 0.796903 3.80826 0.946677 3.39143 1.19719C2.9746 1.44771 2.62199 1.79205 2.36166 2.20282C2.10133 2.61359 1.94046 3.07946 1.89185 3.56334C1.84325 4.04722 1.90825 4.53577 2.08168 4.99011C2.25511 5.44446 2.53219 5.85205 2.89086 6.18047C2.04186 6.54878 1.30392 7.13267 0.750237 7.87422C0.650677 8.00682 0.607874 8.17355 0.631242 8.33772C0.654611 8.50189 0.742238 8.65005 0.874846 8.74961C1.00745 8.84917 1.17418 8.89197 1.33835 8.8686C1.50252 8.84523 1.65068 8.75761 1.75024 8.625C2.12695 8.11864 2.61728 7.7078 3.18177 7.42556C3.74625 7.14331 4.36912 6.99755 5.00024 7C5.166 7 5.32497 6.93415 5.44218 6.81694C5.55939 6.69973 5.62524 6.54076 5.62524 6.375Z"
+                fill="#1C1C1C"
+                />
+            </svg>
+            <span class="ml-2 text-lg">Team</span>
+          </a>
+          <a
+            class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="/logs"
+          >
+            <svg
+              class="w-6 h-6 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <!-- <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+              /> -->
+              <path
+                d="M12 2H5.6C5.17565 2 4.76869 2.16857 4.46863 2.46863C4.16857 2.76869 4 3.17565 4 3.6V16.4C4 16.8243 4.16857 17.2313 4.46863 17.5314C4.76869 17.8314 5.17565 18 5.6 18H15.2C15.6243 18 16.0313 17.8314 16.3314 17.5314C16.6314 17.2313 16.8 16.8243 16.8 16.4V6.8L12 2Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 2V6.8H16.8"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5953 10.7998H7.19531"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5953 14H7.19531"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.79531 7.6001H7.99531H7.19531"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="ml-2 text-lg">Log</span>
+            <!-- <span
+              class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"
+            ></span> -->
+          </a>
+          <a
+            class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-100 hover:text-blue-900 no-underline"
+            href="#"
+          >
+            <svg
+              class="w-6 h-6 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <!-- <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+            /> -->
+              <g clip-path="url(#clip0_5112_4355)">
+                <path
+                  d="M10.0013 18.3337C14.6037 18.3337 18.3346 14.6027 18.3346 10.0003C18.3346 5.39795 14.6037 1.66699 10.0013 1.66699C5.39893 1.66699 1.66797 5.39795 1.66797 10.0003C1.66797 14.6027 5.39893 18.3337 10.0013 18.3337Z"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 13.3333V10"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 6.66699H10.0075"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_5112_4355">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="ml-2 text-lg">Tickets</span>
+            <!-- <span
+            class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"
+          ></span> -->
+          </a>
+        </div>
+      </div>
+      <a
+        class="flex items-center justify-center w-9/12 h-16 mt-auto bg-blue-100 hover:bg-blue-100 hover:text-blue-900 rounded-md no-underline"
+        href="#"
+      >
+        <svg
+          class="w-6 h-6 stroke-current"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 27 28"
+          stroke="currentColor"
+        >
+          <!-- <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          /> -->
+          <!-- <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+          <path
+            d="M13.5 26.75C20.5416 26.75 26.25 21.0416 26.25 14C26.25 6.95837 20.5416 1.25 13.5 1.25C6.45837 1.25 0.75 6.95837 0.75 14C0.75 21.0416 6.45837 26.75 13.5 26.75Z"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19.5 20.75V19.25C19.5 18.4544 19.1839 17.6913 18.6213 17.1287C18.0587 16.5661 17.2956 16.25 16.5 16.25H10.5C9.70435 16.25 8.94129 16.5661 8.37868 17.1287C7.81607 17.6913 7.5 18.4544 7.5 19.25V20.75"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M13.5 13.25C15.1569 13.25 16.5 11.9069 16.5 10.25C16.5 8.59315 15.1569 7.25 13.5 7.25C11.8431 7.25 10.5 8.59315 10.5 10.25C10.5 11.9069 11.8431 13.25 13.5 13.25Z"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <!-- </svg> -->
+        </svg>
+        <span class="ml-2 text-lg">Admin
+         
+        </span>
+      </a>
+      <% if (messages.success) { %>
+        <div class="alert alert-success">
+          <%= messages.success %>
+        </div>
+      <% } %>
+      <% if (messages.error) { %>
+        <div class="alert alert-danger"> logout
+          <%= messages.error %>
+        </div>
+      <% } %>
+    
+      
+    </div>
+
+    <!-- Component End  -->
+    
+    <style>
+    
+
+    </style>
+    <script>
+      <button id="logout-button">Logout</button>
+
+<script>
+  document.getElementById('logout-button').addEventListener('click', function() {
+    fetch('/users/logout', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+</script>
+
+    </script>
+    
+  </body>
+</html>

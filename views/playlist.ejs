@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/playlist.css" />
+
+  <script src="/js/playlist.js"></script>/
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-inner-one">
+      <button class="exit-btn">Exit</button>
+      <input type="search" placeholder="Playlist Name" class="search" />
+    </div>
+
+    <div class="header-inner-two">
+      <div class="header-inner-two-inner">
+        <button class="vertical-btn">Vertical</button>
+        <button class="horizontal-btn">Horizontal</button>
+        <button class="custom">Custom</button>
+        <button class="AuotAlign-btn">Auot Align</button>
+      </div>
+      <div class="header-inner-two-inner-layout">
+        <button class="newlayout-btn">+ New Layout</button>
+      </div>
+    </div>
+
+    <div class="header-inner-three">
+      <button class="preview-btn">Preview</button>
+      <button class="preview-btn save">Save</button>
+      <button class="preview-btn next">Next ></button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="container1">
+      <div class="container1-btn">
+        <button class="media-btn">Media</button>
+        <button class="widgets-btn">Widgets</button>
+      </div>
+      <div class="container1-search">
+
+
+
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="custom-file mb-3">
+
+          </div>
+          <div class="file-container mb-3"></div>
+
+        </form>
+        <% if (files && files.length> 0) { %>
+
+          <div class="row file-row">
+            <% let imageCount=0; %>
+              <% files.forEach(function(file) { %>
+                <div class="col-md-4 file-col">
+                  <% if (file.format==='mp4' ) { %>
+                    <video width="100%" controls>
+                      <source src="<%= file.secure_url %>" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                    <% } else { %>
+                      <% imageCount++; %>
+                        <img src="<%= file.secure_url %>" alt="Uploaded image" class="img-thumbnail file-img">
+                        <% } %>
+                          <form id="delete-form-<%= file.public_id %>" action="/delete" method="POST"
+                            class="delete-form">
+                            <input type="hidden" name="public_id" value="<%= file.public_id %>">
+                            <button type="submit" class="btn btn-link" style="color: red;"
+                              onclick="return confirmDelete('<%= file.public_id %>');">
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
+                          </form>
+                </div>
+                <% }); %>
+          </div>
+      </div>
+      <% } else { %>
+        <p>No files uploaded yet.</p>
+        <% } %>
+    </div>
+    <div class="container1-3-btn">
+      <button class="all-btn">All</button>
+      <button class="phtos-btn">Photos</button>
+      <button class="phtos-btn">Videos</button>
+      <button class="folder-btn">Folders</button>
+
+    </div>
+  </div>
+  <div class="container2">
+    <div class="grid-container">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+
+    <div class="layout-screen">
+      <div class="screen-inner"></div>
+      <h3>Layout 1</h3>
+      <p>10s</p>
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="layout-settings">
+      <label for="" class="layout-label">Layout Settings</label>
+      <span class="copy-delete-btn">
+        <img class="copy-img" src="../SVG/copy.svg" alt="" />
+        <img class="delete-img" src="../SVG/Delete.svg" alt="" /></span>
+    </div>
+    <div class="Number-of-Zones">
+      <label for="">Number of Zones:1</label>
+    </div>
+
+    <div><label class="duration-label">Layout Name</label></div>
+    <div>
+      <input class="input-field-layout" type="text" placeholder="Layout 1" />
+      <div>
+        <div>
+          <label class="duration-label" for="Duration">Duration</label>
+        </div>
+        <div></div>
+        <input class="input-field-layout" type="text" placeholder="10 sec" />
+      </div>
+
+      <div class="Number-of-Zones">
+        <label for="Schedule">Schedule</label>
+      </div>
+      <div class="Number-of-Zones">
+        <label for="Schedule">Start Date (From-To)</label>
+      </div>
+      <div class="date">
+        <input class="input-field-date" type="date" />
+        <input class="input-field-date" type="date" />
+      </div>
+      <div class="Number-of-Zones">
+        <label for="Schedule">Select Time (From-To)</label>
+      </div>
+
+      <div class="date">
+        <input class="input-field-date" type="time" />
+        <input class="input-field-date" type="time" />
+      </div>
+
+      <div class="Number-of-Zones">
+        <label for="Select Days">Select Days</label>
+      </div>
+      <div class="week-btn">
+        <button class="day-btn">
+          <img src="../SVG/sunday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/monday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/tuesday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/wednesday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/thrusday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/friday.svg" alt="" />
+        </button>
+        <button class="day-btn">
+          <img src="../SVG/saturday.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

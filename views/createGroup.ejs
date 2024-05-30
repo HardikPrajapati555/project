@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Group</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 20px;
+    }
+    .box {
+      border: 1px solid #ccc;
+      height: 400px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    .arrow-btn {
+      margin-top: 180px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Group</h1>
+    <form id="createGroupForm">
+      <div class="form-group">
+        <label for="groupName">Group Name</label>
+        <input type="text" class="form-control" id="groupName" required>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <h3>Dashboard Data</h3>
+          <div class="box" id="dashboardData">
+            <% locations.forEach(location => { %>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<%= location.id %>" id="location<%= location.id %>">
+                <label class="form-check-label" for="location<%= location.id %>">
+                  <%= location.screenname %> - <%= location.location %>
+                </label>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+        <div class="col-md-2 text-center arrow-btn">
+          <button type="button" class="btn btn-primary" onclick="moveSelectedToGroup()">→</button>
+        </div>
+        <div class="col-md-5">
+          <h3>Selected Data</h3>
+          <div class="box" id="selectedData"></div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success mt-3">Create Group</button>
+    </form>
+  </div>
+
+  <script>
+    function moveSelectedToGroup() {
+      const dashboardData = document.getElementById('dashboardData');
+      const selectedData = document.getElementById('selectedData');
+
+      const checkboxes = dashboardData.querySelectorAll('input[type="checkbox"]:checked');
+
+      checkboxes.forEach(checkbox => {
+        const listItem = document.createElement('div');
+        listItem.className = 'form-check';
+        listItem.innerHTML = `
+          <input class="form-check-input" type="checkbox" value="${checkbox.value}" checked>
+          <label class="form-check-label">${checkbox.nextElementSibling.textContent}</label>
+        `;
+
+        selectedData.appendChild(listItem);
+        checkbox.parentElement.remove();
+      });
+    }
+
+    document.getElementById('createGroupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const groupName = document.getElementById('groupName').value;
+
+      const selectedData = [];
+      const selectedListItems = document.getElementById('selectedData').querySelectorAll('input[type="checkbox"]');
+
+      selectedListItems.forEach(item => {
+        selectedData.push(item.value);
+      });
+
+      fetch('/users/groups', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ groupName, selectedData })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = '/users/dashboard';
+        } else {
+          alert('Error creating group: ' + data.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

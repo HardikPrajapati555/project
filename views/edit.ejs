@@ -1,0 +1,176 @@
+<!-- edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Location</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Location</h1>
+        <form action="/users/edit/<%= location.id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label for="pairing_code" class="form-label">Pairing Code</label>
+                <input type="text" class="form-control" id="pairing_code" name="pairing_code" value="<%= location.pairing_code %>"  readonly>
+            </div>
+            <div class="mb-3">
+                <label for="screenname" class="form-label">Screen Name</label>
+                <input type="text" class="form-control" id="screenname" name="screenname" value="<%= location.screenname %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="tag" class="form-label">Tag</label>
+                <input type="text" class="form-control" id="tag" name="tag" value="<%= location.tag %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" value="<%= location.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" value="<%= location.city %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" name="state" value="<%= location.state %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" name="country" value="<%= location.country %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="area" class="form-label">Area</label>
+                <input type="text" class="form-control" id="area" name="area" value="<%= location.area %>" required>
+            </div>
+            <div class="boxxx">
+                <!-- Google Maps API iframe code here -->
+                <div id="map" class="col-md-8" style="height: 300px;"></div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+    <script>
+         function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 23.0225, lng: 72.5714}, // Default center (can be adjusted)
+            zoom: 12 // Default zoom level (can be adjusted)
+        });
+
+        var geocoder = new google.maps.Geocoder();
+
+        // Listen for changes in the location input field
+        var locationInput = document.getElementById('location');
+        locationInput.addEventListener('input', function() {
+            // Clear previous markers
+            mapMarkers.forEach(function(marker) {
+                marker.setMap(null);
+            });
+
+            // Geocode the input location
+            geocoder.geocode({ address: locationInput.value }, function(results, status) {
+                if (status === 'OK' && results[0]) {
+                    // Update map center
+                    map.setCenter(results[0].geometry.location);
+
+                    // Add marker for the input location
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+
+                    // Store the marker
+                    mapMarkers.push(marker);
+                } else {
+                    // Handle geocoding errors
+                    console.log('Geocode was not successful for the following reason:', status);
+                }
+            });
+        });
+    }
+
+    // Initialize mapMarkers array to store markers
+    var mapMarkers = [];
+
+    // Load the map asynchronously
+    function loadMap() {
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+        script.defer = true;
+        document.body.appendChild(script);
+    }
+    loadMap();
+    </script>
+
+
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: 'sans-serif';
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+            margin-right: 200px;
+        }
+
+        .container {
+            position: relative;
+            width: 218%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-left: 650px;
+            
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .boxxx {
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 428px;
+            position: absolute;
+            top: 20%;
+            left: 159%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            margin-top: 270px;
+            height: 600px;
+        }
+ 
+    </style>
+
+</body>
+</html>

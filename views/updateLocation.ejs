@@ -1,0 +1,55 @@
+<!-- updateLocation.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Location</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update Location</h1>
+        <form action="/users/updateLocation/<%= location.id %>" method="POST">
+            <div class="form-group">
+                <label for="pairing_code">Pairing Code:</label>
+                <input type="text" id="pairing_code" name="pairing_code" value="<%= location.pairing_code %>" required>
+            </div>
+            <div class="form-group">
+                <label for="screenname">Screen Name:</label>
+                <input type="text" id="screenname" name="screenname" value="<%= location.screenname %>" required>
+            </div>
+            <div class="form-group">
+                <label for="tag">Tag:</label>
+                <input type="text" id="tag" name="tag" value="<%= location.tag %>" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="<%= location.location %>" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" value="<%= location.city %>" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" value="<%= location.state %>" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" value="<%= location.country %>" required>
+            </div>
+            <div class="form-group">
+                <label for="area">Area:</label>
+                <input type="text" id="area" name="area" value="<%= location.area %>" required>
+            </div>
+            <button type="submit">Update Location</button>
+        </form>
+    </div>
+</body>
+
+</html>
